@@ -1,0 +1,15 @@
+aws_c_common:
+- 0.4.59
+c_compiler:
+- vs2017
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+openssl:
+- 1.1.1
+pin_run_as_build:
+  openssl:
+    max_pin: x.x.x
+target_platform:
+- win-64
