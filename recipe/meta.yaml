@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 393dc439f12e5081412061bc72447474382abe4c0bde8d5ec9e911f4efed23a3
-  patches:
-    - 0001-Don-t-hardcode-the-path-to-the-macOS-SDK.patch
 
 build:
   number: 0
@@ -23,7 +21,6 @@ requirements:
     - ninja
   host:
     - aws-c-common
-    - openssl
 
 test:
   commands:
