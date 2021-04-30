@@ -21,6 +21,7 @@ requirements:
     - ninja
   host:
     - aws-c-common
+    - openssl  # [linux]
 
 test:
   commands:
