@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: a25e6a228a076d4b34d3334daa02aa2f79a8fb6329f9f9b99b931e3998b712b0
-  patches:
-    - 0001-Don-t-hardcode-the-path-to-the-macOS-SDK.patch
 
 build:
   number: 0
