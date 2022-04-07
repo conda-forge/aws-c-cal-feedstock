@@ -1,5 +1,5 @@
 {% set name = "aws-c-cal" %}
-{% set version = "0.5.15" %}
+{% set version = "0.5.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 7b868b86dadf4e277703622a9479d611a9197f3b01b9398a6352cdaf9dd39e32
+  sha256: 389ba26fdc9f594882cfd43147eabe5480dd5dbda719f113a249dbe3a02e81c3
 
 build:
   number: 0
