@@ -10,6 +10,8 @@ source:
   sha256: 23452ab7960c480f1ec0a96ac55bde32d7d27c4a664baeadc248923b19c12086
 
 build:
+  # temporarily skip all builds to push new branch
+  skip: true
   number: 2
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
