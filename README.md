@@ -239,6 +239,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@h-vetinari](https://github.com/h-vetinari/)
+* [@conda-forge/aws-sdk-cpp](https://github.com/conda-forge/aws-sdk-cpp/)
 * [@xhochy](https://github.com/xhochy/)
 

@@ -39,5 +39,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - h-vetinari
     - xhochy
+    - conda-forge/aws-sdk-cpp
