@@ -1,11 +1,11 @@
 BUILD:
 - aarch64-conda_cos7-linux-gnu
 aws_c_common:
-- 0.8.14
+- 0.8.17
 c_compiler:
 - gcc
 c_compiler_version:
-- '11'
+- '12'
 cdt_arch:
 - aarch64
 cdt_name:

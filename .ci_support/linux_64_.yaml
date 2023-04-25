@@ -1,9 +1,9 @@
 aws_c_common:
-- 0.8.14
+- 0.8.17
 c_compiler:
 - gcc
 c_compiler_version:
-- '11'
+- '12'
 cdt_name:
 - cos6
 channel_sources:
