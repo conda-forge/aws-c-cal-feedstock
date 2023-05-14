@@ -10,7 +10,7 @@ source:
   sha256: 9db3c8b896b25c48d01a4edad7afd2be19c766ebdf407c510550ff23bace2a2f
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
