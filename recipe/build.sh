@@ -11,6 +11,7 @@ cmake ${CMAKE_ARGS} -GNinja \
   -DENABLE_TESTING=OFF \
   -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS=ON \
+  -DUSE_OPENSSL=ON \
   ..
 ninja install
 popd
