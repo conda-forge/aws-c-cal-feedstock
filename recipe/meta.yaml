@@ -21,7 +21,7 @@ requirements:
     - ninja
   host:
     - aws-c-common
-    - openssl
+    - openssl  # [not win and not osx]
 
 test:
   commands:
