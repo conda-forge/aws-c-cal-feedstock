@@ -24,11 +24,25 @@ requirements:
     - openssl  # [not win and not osx]
 
 test:
+  requires:
+    # cmake needs compiler to be able to run package detection, see
+    # https://discourse.cmake.org/t/questions-about-find-package-cli-msvc/6194
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - pkg-config
+  files:
+    - cmake_test/
   commands:
     - test -f $PREFIX/lib/libaws-c-cal${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/cal/cal.h  # [unix]
     - if not exist %LIBRARY_INC%\\aws\\cal\\cal.h exit 1          # [win]
     - if not exist %PREFIX%\\Library\\bin\\aws-c-cal.dll exit 1  # [win]
+
+    # CMake integration
+    - cd cmake_test
+    - cmake -GNinja $CMAKE_ARGS .   # [unix]
+    - cmake -GNinja %CMAKE_ARGS% .  # [win]
 
 about:
   home: https://github.com/awslabs/aws-c-cal
