@@ -10,7 +10,7 @@ source:
   sha256: 777feb1e88b261415e1ad607f7e420a743c3b432e21a66a5aaf9249149dc6fef
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
@@ -21,14 +21,28 @@ requirements:
     - ninja
   host:
     - aws-c-common
-    - openssl
+    - openssl  # [not win and not osx]
 
 test:
+  requires:
+    # cmake needs compiler to be able to run package detection, see
+    # https://discourse.cmake.org/t/questions-about-find-package-cli-msvc/6194
+    - {{ compiler('c') }}
+    - cmake
+    - ninja
+    - pkg-config
+  files:
+    - cmake_test/
   commands:
     - test -f $PREFIX/lib/libaws-c-cal${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/cal/cal.h  # [unix]
     - if not exist %LIBRARY_INC%\\aws\\cal\\cal.h exit 1          # [win]
     - if not exist %PREFIX%\\Library\\bin\\aws-c-cal.dll exit 1  # [win]
+
+    # CMake integration
+    - cd cmake_test
+    - cmake -GNinja $CMAKE_ARGS .   # [unix]
+    - cmake -GNinja %CMAKE_ARGS% .  # [win]
 
 about:
   home: https://github.com/awslabs/aws-c-cal
