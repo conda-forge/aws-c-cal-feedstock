@@ -1,5 +1,5 @@
 aws_c_common:
-- 0.9.5
+- 0.9.8
 c_compiler:
 - vs2019
 channel_sources:
