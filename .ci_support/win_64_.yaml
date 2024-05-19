@@ -1,5 +1,5 @@
 aws_c_common:
-- 0.9.18
+- 0.9.19
 c_compiler:
 - vs2019
 c_stdlib:
