@@ -23,6 +23,8 @@ requirements:
   host:
     - aws-c-common
     - openssl  # [not win and not osx]
+    # Remove this pin once https://github.com/openssl/openssl/pull/24687#issuecomment-2227085012 is resolved
+    - openssl 3.3.1 *_0
 
 test:
   requires:
