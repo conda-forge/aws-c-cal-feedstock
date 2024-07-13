@@ -10,7 +10,7 @@ source:
   sha256: 2fbdc04d72d1f3af28b80fe3917f03f20c0a62bc22b6c7b3450486ee9cbe77f6
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
@@ -23,6 +23,8 @@ requirements:
   host:
     - aws-c-common
     - openssl  # [not win and not osx]
+    # Remove this pin once https://github.com/openssl/openssl/pull/24687#issuecomment-2227085012 is resolved
+    - openssl 3.3.1 *_0
 
 test:
   requires:
