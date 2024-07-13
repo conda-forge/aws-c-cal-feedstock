@@ -2,7 +2,7 @@
 
 set -ex
 
-mkdir build
+mkdir -p build
 pushd build
 cmake ${CMAKE_ARGS} -GNinja \
   -DCMAKE_PREFIX_PATH=$PREFIX \
@@ -12,7 +12,7 @@ cmake ${CMAKE_ARGS} -GNinja \
   -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS=ON \
   -DUSE_OPENSSL=ON \
-  -DBYO_CRYPTO=ON \
+  -DBYO_CRYPTO=OFF \
   ..
 ninja install
 popd
