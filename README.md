@@ -9,6 +9,8 @@ Package license: Apache-2.0
 
 Summary: Aws Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives.
 
+Development: https://github.com/awslabs/aws-c-cal
+
 Current build status
 ====================
 
