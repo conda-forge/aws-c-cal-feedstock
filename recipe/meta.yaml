@@ -10,7 +10,7 @@ source:
   sha256: a41b389e942fadd599a6a0f692b75480d663f1e702c0301177f00f365e0c9b94
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
@@ -47,6 +47,7 @@ test:
 
 about:
   home: https://github.com/awslabs/aws-c-cal
+  dev_url: https://github.com/awslabs/aws-c-cal
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
