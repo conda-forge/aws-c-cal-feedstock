@@ -10,7 +10,7 @@ source:
   sha256: 215dd31c12ea49c4f40aa7882a800f9648e4095cfcb2d6abdd27e957574ad6e2
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
@@ -44,6 +44,10 @@ test:
     - cd cmake_test
     - cmake -GNinja $CMAKE_ARGS .   # [unix]
     - cmake -GNinja %CMAKE_ARGS% .  # [win]
+    - cmake --build .  # [target_platform == "win-arm64"]
+    - aws_cal_consumer.exe  # [target_platform == "win-arm64"]
+    - dumpbin /headers "%LIBRARY_BIN%\aws-c-cal.dll" | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
+    - dumpbin /headers aws_cal_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
 
 about:
   home: https://github.com/awslabs/aws-c-cal
