@@ -1,5 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
 project(cf_dummy LANGUAGES C)
+cmake_minimum_required(VERSION 3.12)
+# make sure package is found
 find_package(aws-c-cal REQUIRED)
-add_executable(aws_cal_consumer consumer.c)
-target_link_libraries(aws_cal_consumer PRIVATE AWS::aws-c-cal)

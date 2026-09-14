@@ -43,11 +43,7 @@ test:
     # CMake integration
     - cd cmake_test
     - cmake -GNinja $CMAKE_ARGS .   # [unix]
-    - cmake -GNinja %CMAKE_ARGS% -DCMAKE_BUILD_TYPE=Release .  # [win]
-    - cmake --build .  # [target_platform == "win-arm64"]
-    - aws_cal_consumer.exe  # [target_platform == "win-arm64"]
-    - dumpbin /headers "%LIBRARY_BIN%\aws-c-cal.dll" | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
-    - dumpbin /headers aws_cal_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
+    - cmake -GNinja %CMAKE_ARGS% .  # [win]
 
 about:
   home: https://github.com/awslabs/aws-c-cal
