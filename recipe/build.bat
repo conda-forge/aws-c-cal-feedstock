@@ -1,7 +1,7 @@
 mkdir "%SRC_DIR%"\build
 pushd "%SRC_DIR%"\build
 
-cmake -G "Ninja" ^
+cmake %CMAKE_ARGS% -G "Ninja" ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
